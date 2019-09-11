@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('https://github.com/tieucotdau145/webrtc-demo.git');
 
 $('#div-chat').hide();
 
@@ -40,7 +40,7 @@ function playStream(idVideoTag, stream){
 /*openStream()
 .then(stream => playStream('localStream', stream));*/
 
-const peer = new Peer();
+const peer = new Peer({key: "peerjs", host: "webrtc-demo-call.herokuapp.com", secure: true, port: 443});
 
 peer.on('open', id => { 
     $('#my-peer').append(id);
